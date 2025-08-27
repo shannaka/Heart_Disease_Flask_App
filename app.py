@@ -12,8 +12,9 @@ with open('model_columns.json', 'r') as f:
 
 app = Flask(__name__)
 
-@app.route('/predict', methods=['POST'])
-def predict():
+@app.route('/')
+def home():
+    return "Heart Disease Predictor is running!"
     try:
         data = request.get_json()
         print("Received data:", data)
